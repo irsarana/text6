@@ -1,0 +1,11 @@
+<div class="game-container" (click)="jump()">
+  <div class="bird" [ngStyle]="{'top.px': birdYPosition}"></div>
+
+  <div *ngFor="let obstacle of obstacles" class="obstacle"
+       [ngStyle]="{'left.px': obstacle.x, 'height.px': obstacle.height, 'top.px': obstacle.top}">
+  </div>
+
+  <div *ngIf="isGameOver" class="game-over">
+    Game Over! Click to restart.
+  </div>
+</div>
